@@ -24,21 +24,24 @@ public class MainActivity extends AppCompatActivity {
         mGoBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Integer pageNum = Integer.parseInt(mPageNumber.getEditableText().toString());
-                switch (pageNum){
-                    case 1:
-                        startActivity(new Intent(MainActivity.this, Act1Activity.class));
-                        break;
-                    case 2:
-                        startActivity(new Intent(MainActivity.this, Act2Activity.class));
-                        break;
-                    case 3:
-                        startActivity(new Intent(MainActivity.this, Act3Activity.class));
-                        break;
-                    default:
-                        Toast.makeText(MainActivity.this, "Please input number from 1-3 only", Toast.LENGTH_LONG).show();
+                if(!mPageNumber.getEditableText().toString().isEmpty()){
+                    Integer pageNum = Integer.parseInt(mPageNumber.getEditableText().toString());
+                    switch (pageNum){
+                        case 1:
+                            startActivity(new Intent(MainActivity.this, Act1Activity.class));
+                            break;
+                        case 2:
+                            startActivity(new Intent(MainActivity.this, Act2Activity.class));
+                            break;
+                        case 3:
+                            startActivity(new Intent(MainActivity.this, Act3Activity.class));
+                            break;
+                        default:
+                            Toast.makeText(MainActivity.this, "Please input number from 1-3 only", Toast.LENGTH_LONG).show();
 
-                }
+                    }
+                }else Toast.makeText(MainActivity.this, "Please input some number from 1-3 only", Toast.LENGTH_LONG).show();
+
             }
         });
 
