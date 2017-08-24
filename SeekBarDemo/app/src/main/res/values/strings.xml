@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">SeekBarDemo</string>
+    <string name="defalut_value">Enter Something</string>
+    <string name="instruction">Change Size by Moving the Bar</string>
+</resources>
