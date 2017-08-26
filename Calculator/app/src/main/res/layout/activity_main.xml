@@ -6,68 +6,113 @@
     android:layout_height="match_parent"
     tools:context="chhatrachhorm.onenterpise.calculator.MainActivity">
 
-    <TextView
-        android:id="@+id/main_in_out_view"
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/textInputLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="0dp"
-        android:layout_marginStart="0dp"
         android:layout_marginTop="0dp"
         android:background="@drawable/border"
-        android:paddingEnd="5dp"
-        android:paddingLeft="5dp"
-        android:paddingRight="5dp"
-        android:paddingStart="5dp"
-        android:text="0"
-        android:textAlignment="textEnd"
-        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <android.support.constraint.ConstraintLayout
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/main_input_output"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter a nummber"
+            android:inputType="numberSigned|numberDecimal"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:textAlignment="viewEnd"
+            android:textStyle="bold" />
+    </android.support.design.widget.TextInputLayout>
+
+    <Button
+        android:id="@+id/plus"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        android:background="@color/colorBrownDark3"
+        android:text="+"
+        android:textColor="@android:color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
+
+    <Button
+        android:id="@+id/minus"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="0dp"
+        android:background="@color/colorBrownDark3"
+        android:text="-"
+        android:textColor="@android:color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/plus"
+        app:layout_constraintTop_toTopOf="@+id/plus" />
+
+
+    <Button
+        android:id="@+id/multi"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginTop="0dp"
+        android:background="@color/colorBrownDark3"
+        android:text="*"
+        android:textColor="@android:color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/division"
+        app:layout_constraintTop_toTopOf="@+id/division" />
+
+
+    <Button
+        android:id="@+id/division"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="30dp"
+        android:background="@color/colorBrownDark3"
+        android:text="/"
+        android:textColor="@android:color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
+
+    <Button
+        android:id="@+id/equal"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="30dp"
+        android:background="@color/colorBrownDark3"
+        android:text="="
+        android:textColor="@android:color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/multi"
+        app:layout_constraintStart_toEndOf="@+id/minus"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
+
+    <TextView
+        android:id="@+id/answer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        android:text="answer"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/main_in_out_view"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintTop_toBottomOf="@+id/equal" />
 
-        <Button
-            android:id="@+id/button7"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:background="@color/colorPrimaryDark"
-            android:text="7"
-            android:textColor="@android:color/white"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            tools:layout_editor_absoluteX="77dp"
-            tools:layout_editor_absoluteY="215dp" />
-        <Button
-            android:id="@+id/button"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:background="@color/colorPrimaryDark"
-            android:text="8"
-            android:textColor="@android:color/white"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            tools:layout_editor_absoluteX="27dp"
-            tools:layout_editor_absoluteY="211dp" />
-        <Button
-            android:id="@+id/button5"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:background="@color/colorPrimaryDark"
-            android:text="7"
-            android:textColor="@android:color/white"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            tools:layout_editor_absoluteX="27dp"
-            tools:layout_editor_absoluteY="211dp" />
-    </android.support.constraint.ConstraintLayout>
 
 </android.support.constraint.ConstraintLayout>
