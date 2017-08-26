@@ -29,8 +29,7 @@ public class MainActivity extends AppCompatActivity {
         mTextView = findViewById(R.id.answer);
         isInitial = true;
         isNum1 = false;
-        num1 = num2 = 0;
-        ans = 0;
+        num1 = num2 = ans = 0;
         operator = "default";
         mInputOutput.setText("");
 
@@ -89,7 +88,6 @@ public class MainActivity extends AppCompatActivity {
                 mTextView.setText("The ans: " +ans);
                 operator = "default";
                 isNum1 = false;
-                ans = 0;
                 num1 = num2 = ans = 0;
             }
         });
