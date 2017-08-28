@@ -27,7 +27,7 @@
         app:layout_constraintTop_toBottomOf="@+id/cta_toolbar" />
 
     <TextView
-        android:id="@+id/cta_log"
+        android:id="@+id/log_model_cta_log"
         android:layout_width="0dp"
         android:layout_height="90dp"
         android:layout_weight="1"
@@ -59,7 +59,7 @@
         android:textColor="@android:color/white"
         android:textSize="15sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/cta_log"
+        app:layout_constraintBottom_toTopOf="@+id/log_model_cta_log"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 

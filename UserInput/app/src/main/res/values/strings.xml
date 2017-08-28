@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">UserInput</string>
     <string name="cta_log">%1$s\n%2$s</string>
+    <string name="tpa_log">TPA Log:</string>
 </resources>

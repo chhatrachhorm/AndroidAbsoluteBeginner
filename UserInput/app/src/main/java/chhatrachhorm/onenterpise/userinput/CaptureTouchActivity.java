@@ -42,7 +42,7 @@ public class CaptureTouchActivity extends AppCompatActivity implements
         mDectetor.setOnDoubleTapListener(this);
 
 
-        mLog = findViewById(R.id.cta_log);
+        mLog = findViewById(R.id.log_model_cta_log);
         mLog.setMovementMethod(new ScrollingMovementMethod());
         mLog.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -88,6 +88,7 @@ public class CaptureTouchActivity extends AppCompatActivity implements
     }
     public void makeToast(String message){
         String old_message = mLog.getText().toString();
+        if(old_message.length() > 100) old_message = old_message.substring(50);
         Long tsLong = System.currentTimeMillis()/1000;
         String datetime = tsLong.toString();
         message = datetime + ": " + message;
