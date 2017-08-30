@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">SavingData</string>
+    <string name="parentKey">main.key.value.data.user.input</string>
+    <string name="keyValueUserInput">main.key.value.data.user.input.text</string>
+    <string name="resultKeyValue">KeyValue Result : %1$s </string>
+</resources>

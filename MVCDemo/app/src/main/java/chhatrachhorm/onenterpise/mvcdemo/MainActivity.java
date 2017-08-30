@@ -8,6 +8,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+/**
+ * MVC
+ * 1. create a Model Class with getter, setter, constructor and empty constructor
+ * 2. get value from Model (model get value from DB, each var in Model class must be the same as the name in DB)
+ * */
 
 public class MainActivity extends AppCompatActivity {
 

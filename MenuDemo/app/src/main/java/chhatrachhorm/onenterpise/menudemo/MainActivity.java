@@ -5,7 +5,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-
+/**
+ * 1. create menu resource directory, and main_menu.xml file
+ * 2. include some items (unique id to each item)
+ * 3. inflate the menu to the activity containing menu
+ *      onCreateOptionsMenu() -> getMenuInflater.inflate(R.menu.main_menu, menu)
+ * 4. Specifies callback action in onOptionsItemSelected
+ * */
 public class MainActivity extends AppCompatActivity {
 
     @Override
