@@ -7,6 +7,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.View;
+import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.GridView;
 import android.widget.SeekBar;
@@ -16,7 +18,7 @@ public class ColorMixerActivity extends AppCompatActivity {
 
     private SeekBar mRedSeekBar, mGreenSeekbar, mBlueSeekbar;
     private TextView mPercentage;
-//    private ConstraintLayout mLayout;
+    private ConstraintLayout mLayout;
     private FrameLayout mColorMixerDemo;
 //    private FrameLayout mRedDemo, mGreenDemo, mBlueDemo;
     private TextInputEditText mALphaInput;
@@ -33,10 +35,19 @@ public class ColorMixerActivity extends AppCompatActivity {
         mGreenSeekbar.setMax(255);
         mBlueSeekbar.setMax(255);
 
+        Button mSetBack  = findViewById(R.id.cma_background);
+        mSetBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                setBackColor();
+
+            }
+        });
+
 
         mPercentage = findViewById(R.id.cm_color_percentage);
 
-//        mLayout = findViewById(R.id.cma_layout);
+        mLayout = findViewById(R.id.cma_layout);
 
 //        mRedDemo = findViewById(R.id.cma_red_demo);
 //        mGreenDemo = findViewById(R.id.cma_green_demo);
@@ -108,5 +119,18 @@ public class ColorMixerActivity extends AppCompatActivity {
         int color = Color.argb(alpha, r, g, b);
         mColorMixerDemo.setBackgroundColor(color);
         mPercentage.setText(getString(R.string.color_percentage, r, g, b, alpha));
+    }
+    private void setBackColor(){
+        setColor();
+            int r = mRedSeekBar.getProgress();
+            int g = mGreenSeekbar.getProgress();
+            int b = mBlueSeekbar.getProgress();
+            String s = mALphaInput.getEditableText().toString();
+            int alpha = s.isEmpty()?255:(
+                    Integer.parseInt(s)>=255?255:Integer.parseInt(s)
+            );
+            int color = Color.argb(alpha, r, g, b);
+            mLayout.setBackgroundColor(color);
+
     }
 }
