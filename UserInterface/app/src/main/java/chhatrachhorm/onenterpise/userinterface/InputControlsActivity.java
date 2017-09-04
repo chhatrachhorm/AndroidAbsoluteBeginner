@@ -10,33 +10,78 @@ import android.widget.RadioGroup;
 import android.widget.Toast;
 import android.widget.ToggleButton;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 public class InputControlsActivity extends AppCompatActivity {
 
-
+    private List<CheckBox> personalities;
+    private List<String> mPersonality;
+    private List<RadioButton> genders;
+    private String sex;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_input_controls);
 
+        personalities = new ArrayList<>();
+        mPersonality = new ArrayList<>();
+        genders = new ArrayList<>();
+        final Map<String, Object> agreements;
+
         // map with checkbox
-        CheckBox mP1 = findViewById(R.id.personal_type_1);
-        CheckBox mP2 = findViewById(R.id.personal_type_2);
-        CheckBox mP3 = findViewById(R.id.personal_type_3);
-        CheckBox mP4 = findViewById(R.id.personal_type_4);
+        final CheckBox mP1 = findViewById(R.id.personal_type_1);
+        final CheckBox mP2 = findViewById(R.id.personal_type_2);
+        final CheckBox mP3 = findViewById(R.id.personal_type_3);
+        final CheckBox mP4 = findViewById(R.id.personal_type_4);
+
+        personalities.add(mP1);
+        personalities.add(mP2);
+        personalities.add(mP3);
+        personalities.add(mP4);
+
+        // Optional : just show how to set on click listener
+        final RadioGroup radioGroup = findViewById(R.id.ipc_radiogroup);
+
+        // instantiate map
+        agreements = new HashMap<>();
 
         // map radio
         RadioButton mR1 = findViewById(R.id.radio_male);
         RadioButton mR2 = findViewById(R.id.radio_female);
         RadioButton mR3 = findViewById(R.id.radio_other_gender);
+        genders.addAll(Arrays.asList(mR1, mR2, mR3));
 
         // Toggle Button
-        ToggleButton mToggleBtn = findViewById(R.id.toggleButton);
+        final ToggleButton mToggleBtn = findViewById(R.id.send_notification_btn);
 
-        Button mAcceptBtn = findViewById(R.id.AcceptBtn);
+        final Button mAcceptBtn = findViewById(R.id.AcceptBtn);
         mAcceptBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                // get value for personality
+                for(CheckBox i : personalities){
+                    if(i.isChecked())
+                        mPersonality.add(i.getText().toString());
+                }
+
+                // get value for radio
+                for(RadioButton r: genders){
+                    if(r.isChecked())
+                        sex = r.getText().toString();
+                }
+                if(mToggleBtn.isChecked())
+                    agreements.put("notified", true);
+                else agreements.put("notified", false);
+                agreements.put("personality", mPersonality);
+                agreements.put("sex", sex);
+                Toast.makeText(InputControlsActivity.this, agreements.toString(), Toast.LENGTH_LONG).show();
+                mPersonality.clear();
+                agreements.clear();
 
             }
         });
@@ -45,8 +90,7 @@ public class InputControlsActivity extends AppCompatActivity {
 
 
 
-        // Optional : just show how to set on click listener
-        RadioGroup radioGroup = findViewById(R.id.ipc_radiogroup);
+
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int position) {
@@ -65,10 +109,7 @@ public class InputControlsActivity extends AppCompatActivity {
 
 
     }
-    // Check Check boxes
-    public void onCheckBoxChecked(){
 
-    }
 
 
 
