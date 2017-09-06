@@ -3,4 +3,5 @@
     <string name="notify_channel_id_1">mict_channel_001</string>
     <string name="channel_id_1_name">My Channel Name</string>
     <string name="channel_id_1_desc">Enable or handle notification here</string>
+    <string name="channel_group_1_name">Normal User Notification Setting</string>
 </resources>
