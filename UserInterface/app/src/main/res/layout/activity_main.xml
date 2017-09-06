@@ -20,10 +20,10 @@
 
     <Button
         android:id="@+id/main_ica"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:text="Button"
+        android:layout_marginBottom="0dp"
+        android:text="User Form Input"
         app:layout_constraintBottom_toTopOf="@+id/main_gridview"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent" />

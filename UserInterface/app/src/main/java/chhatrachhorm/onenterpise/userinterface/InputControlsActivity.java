@@ -2,11 +2,13 @@ package chhatrachhorm.onenterpise.userinterface;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.RatingBar;
 import android.widget.Toast;
 import android.widget.ToggleButton;
 
@@ -38,11 +40,7 @@ public class InputControlsActivity extends AppCompatActivity {
         final CheckBox mP2 = findViewById(R.id.personal_type_2);
         final CheckBox mP3 = findViewById(R.id.personal_type_3);
         final CheckBox mP4 = findViewById(R.id.personal_type_4);
-
-        personalities.add(mP1);
-        personalities.add(mP2);
-        personalities.add(mP3);
-        personalities.add(mP4);
+        personalities.addAll(Arrays.asList(mP1, mP2, mP3, mP4));
 
         // Optional : just show how to set on click listener
         final RadioGroup radioGroup = findViewById(R.id.ipc_radiogroup);
@@ -58,6 +56,19 @@ public class InputControlsActivity extends AppCompatActivity {
 
         // Toggle Button
         final ToggleButton mToggleBtn = findViewById(R.id.send_notification_btn);
+
+        // rating bar
+        final RatingBar mRatingBar = findViewById(R.id.cia_rating_bar);
+        mRatingBar.setNumStars(5);
+        mRatingBar.setRating(1.5f);
+        mRatingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
+            @Override
+            public void onRatingChanged(RatingBar ratingBar, float value, boolean b) {
+                String s = value + " " + b;
+                Toast.makeText(InputControlsActivity.this, s, Toast.LENGTH_SHORT).show();
+                Log.d("RatingListener", s);
+            }
+        });
 
         final Button mAcceptBtn = findViewById(R.id.AcceptBtn);
         mAcceptBtn.setOnClickListener(new View.OnClickListener() {
@@ -79,6 +90,7 @@ public class InputControlsActivity extends AppCompatActivity {
                 else agreements.put("notified", false);
                 agreements.put("personality", mPersonality);
                 agreements.put("sex", sex);
+                agreements.put("likability", mRatingBar.getRating());
                 Toast.makeText(InputControlsActivity.this, agreements.toString(), Toast.LENGTH_LONG).show();
                 mPersonality.clear();
                 agreements.clear();

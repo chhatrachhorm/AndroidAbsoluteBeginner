@@ -52,7 +52,6 @@ public class CaptureTouchActivity extends AppCompatActivity implements
             }
 
         });
-
     }
 
 
@@ -105,7 +104,7 @@ public class CaptureTouchActivity extends AppCompatActivity implements
     @Override
     public boolean onFling(MotionEvent motionEvent, MotionEvent motionEvent1, float x, float y) {
         makeToast("onFling: " + motionEvent.toString() + motionEvent1.toString());
-        return true;
+        return false;
     }
 
     @Override
@@ -114,9 +113,13 @@ public class CaptureTouchActivity extends AppCompatActivity implements
     }
 
     @Override
-    public boolean onScroll(MotionEvent motionEvent, MotionEvent motionEvent1, float v, float v1) {
-        makeToast("onScroll: " + motionEvent.toString() + motionEvent1.toString());
-        return true;
+    public boolean onScroll(MotionEvent motionEvent, MotionEvent motionEvent1, float distanceX, float distanceY ) {
+        makeToast("onScroll: " +distanceX+" "+distanceY+ motionEvent.toString() + motionEvent1.toString());
+        if(Float.compare(distanceX, 0)>0)makeToast("Scroll left");
+        else makeToast("Scroll right");
+        if(Float.compare(distanceY, 0)<0)makeToast("Scroll down");
+        else makeToast("Scroll up");
+        return false;
     }
 
     @Override
