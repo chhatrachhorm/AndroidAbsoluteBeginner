@@ -25,7 +25,7 @@ public class DynamicElements extends AppCompatActivity {
         setContentView(R.layout.activity_dynamic);
         mFrame = findViewById(R.id.ad_frame_layout);
         // set pages
-        for(int i = 0 ; i <5; i++){
+        for(int i = 0 ; i <100; i++){
             TextView mTextView = new TextView(this);
             mTextView.setId(i+1);
             mTextView.setText(getString(R.string.page_number, (i+1)));
