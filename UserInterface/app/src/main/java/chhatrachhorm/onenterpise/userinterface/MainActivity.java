@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.FrameLayout;
 
 public class MainActivity extends AppCompatActivity {
@@ -49,5 +50,14 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, DynamicElements.class));
             }
         });
+
+        final Button mSWVA = findViewById(R.id.swva_btn);
+        mSWVA.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, SimpleWebViewActivity.class));
+            }
+        });
+
     }
 }

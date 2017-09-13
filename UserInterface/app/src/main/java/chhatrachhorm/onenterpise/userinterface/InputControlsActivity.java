@@ -9,6 +9,7 @@ import android.widget.CheckBox;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RatingBar;
+import android.widget.SeekBar;
 import android.widget.Toast;
 import android.widget.ToggleButton;
 
@@ -101,8 +102,6 @@ public class InputControlsActivity extends AppCompatActivity {
 
 
 
-
-
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int position) {
@@ -118,12 +117,7 @@ public class InputControlsActivity extends AppCompatActivity {
                 }
             }
         });
-
-
     }
-
-
-
 
 
     }

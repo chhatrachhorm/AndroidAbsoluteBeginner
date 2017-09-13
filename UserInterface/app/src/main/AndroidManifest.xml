@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="chhatrachhorm.onenterpise.userinterface">
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="true"
@@ -19,8 +20,10 @@
         <activity android:name=".GridViewActivity" />
         <activity android:name=".InputControlsActivity" />
         <activity android:name=".AlertActivity" />
-        <activity android:name=".FrameViewActivity"></activity>
+        <activity android:name=".FrameViewActivity" />
         <activity android:name=".DynamicElements" />
+        <activity android:name=".SimpleWebViewActivity"
+            android:parentActivityName=".MainActivity"/>
     </application>
 
 </manifest>
