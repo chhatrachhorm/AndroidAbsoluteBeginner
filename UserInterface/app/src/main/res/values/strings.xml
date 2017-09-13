@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">UserInterface</string>
+    <string name="previous"><![CDATA[<< Previous]]></string>
+    <string name="next"><![CDATA[Next >>]]></string>
+    <string name="page_number">Page %1$d</string>
+    <string name="PrevMessage">Please Click Next</string>
+    <string name="NextMessage">Please Click Previous</string>
 </resources>

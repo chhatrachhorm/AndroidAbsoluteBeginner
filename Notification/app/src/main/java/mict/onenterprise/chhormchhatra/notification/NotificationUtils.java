@@ -9,7 +9,7 @@ import android.content.ContextWrapper;
 import android.graphics.Color;
 
 /**
- * Created by chhat on 9/6/2017.
+ * Created by chhatrachhorm on 9/6/2017.
  * Creating Notification Channel
  * min sdk >= 26
  */
@@ -59,7 +59,11 @@ public class NotificationUtils extends ContextWrapper {
         iosChannel.enableVibration(true);
         iosChannel.setLightColor(Color.DKGRAY);
         iosChannel.setLockscreenVisibility(Notification.VISIBILITY_PUBLIC);
+        // to turn off badges of notification
+        iosChannel.setShowBadge(false);
         getNotificationManager().createNotificationChannel(iosChannel);
+
+
         groupingChannels();
         androidChannel.setGroup(CHANNEL_GROUP_ID);
         iosChannel.setGroup(CHANNEL_GROUP_ID);
@@ -79,6 +83,10 @@ public class NotificationUtils extends ContextWrapper {
         return mNotificationManager;
     }
 
+
+    /*
+    * To maintain compatibility, use NotificationCompat.Builder instead
+    * */
     public Notification.Builder getAndroidChannelNotification(String title, String body){
         return new Notification.Builder(getApplicationContext(), ANDROID_CHANNEL_ID)
                 .setContentTitle(title)

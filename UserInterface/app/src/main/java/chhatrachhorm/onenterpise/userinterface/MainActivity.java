@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.FrameLayout;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -25,6 +26,27 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this, InputControlsActivity.class));
+            }
+        });
+        final Button mAA = findViewById(R.id.main_ala);
+        mAA.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, AlertActivity.class));
+            }
+        });
+        final Button mFVA = findViewById(R.id.main_frame);
+        mFVA.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, FrameViewActivity.class));
+            }
+        });
+        final Button mDynamic = findViewById(R.id.main_dynamic_page);
+        mDynamic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, DynamicElements.class));
             }
         });
     }
