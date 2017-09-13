@@ -15,7 +15,7 @@ import android.widget.Toast;
 
 
 /**
- * Dynamic Layout
+ * Dynamic Elements
  * Created by chhatra on 9/12/2017.
  */
 
