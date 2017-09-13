@@ -72,7 +72,6 @@ public class DynamicElements extends AppCompatActivity {
             Toast.makeText(DynamicElements.this, getString(R.string.PrevMessage), Toast.LENGTH_SHORT).show();
         else if (newIndex == pages -1)
             Toast.makeText(DynamicElements.this, getString(R.string.NextMessage), Toast.LENGTH_SHORT).show();
-
         // Page navigation
         if(!(index==newIndex)){
             mFrame.getChildAt(index).setVisibility(View.INVISIBLE);
@@ -100,6 +99,7 @@ public class DynamicElements extends AppCompatActivity {
                 Intent me = new Intent(Intent.ACTION_VIEW);
                 me.setData(Uri.parse(getString(R.string.my_url)));
                 startActivity(me);
+                break;
         }
         return true;
     }
