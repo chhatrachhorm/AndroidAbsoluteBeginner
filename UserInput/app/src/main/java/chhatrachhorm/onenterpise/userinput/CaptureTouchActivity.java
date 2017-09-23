@@ -50,7 +50,6 @@ public class CaptureTouchActivity extends AppCompatActivity implements
                 makeToast("You have touched me");
                 return true;
             }
-
         });
     }
 

@@ -2,4 +2,6 @@
     <string name="app_name">UserInput</string>
     <string name="cta_log">%1$s\n%2$s</string>
     <string name="tpa_log">TPA Log:</string>
+    <string name="cta_log_new">CTA Log:</string>
+    <string name="perform_your_action_now">Perform Your Action Now</string>
 </resources>
