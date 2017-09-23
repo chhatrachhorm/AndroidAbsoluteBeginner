@@ -6,4 +6,16 @@
     android:layout_height="match_parent"
     tools:context="mict.onenterprise.chhormchhatra.fragmentdemo.MainActivity">
 
+
+    <Button
+        android:id="@+id/main_pla_btn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="0dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginStart="0dp"
+        android:text="StartLandPort"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 </android.support.constraint.ConstraintLayout>
