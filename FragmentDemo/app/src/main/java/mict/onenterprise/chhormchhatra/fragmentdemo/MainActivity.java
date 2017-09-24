@@ -19,5 +19,12 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, PortLandActivity.class));
             }
         });
+        Button mMPF = findViewById(R.id.main_multiple_fragment);
+        mMPF.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, MultipleFragmentActivity.class));
+            }
+        });
     }
 }

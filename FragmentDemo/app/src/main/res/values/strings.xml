@@ -8,4 +8,11 @@
     <string name="password">password</string>
     <string name="landscape_mode">Landscape Mode</string>
     <string name="portrait_mode">Portrait Mode</string>
+    <string name="color">Color</string>
+    <string name="font">Font</string>
+    <string name="previous">Previous</string>
+    <string name="next">Next</string>
+    <string name="page_number">Page Number</string>
+    <string name="go">Go</string>
+    <string name="page_number_index">Page %1$d</string>
 </resources>
