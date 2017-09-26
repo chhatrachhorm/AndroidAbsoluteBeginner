@@ -5,7 +5,15 @@ import android.app.FragmentTransaction;
 import android.content.res.Configuration;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-
+/*
+* Associated Fragments :
+*   PortraitFragment
+*   LandscapeFragment
+* Technique :
+*   Use FragmentManagers to inflate fragments into Activity by finding the container
+*       view in the Activity by Id (doesn't use fragment in the activity to link the fragment class directly)
+*   Use getResources().getConfiguration() to get the screen orientation and display it accordingly
+* */
 public class PortLandActivity extends AppCompatActivity {
 
     @Override

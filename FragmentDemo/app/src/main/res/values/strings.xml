@@ -15,4 +15,5 @@
     <string name="page_number">Page Number</string>
     <string name="go">Go</string>
     <string name="page_number_index">Page %1$d</string>
+    <string name="setbackground">SetBackground</string>
 </resources>

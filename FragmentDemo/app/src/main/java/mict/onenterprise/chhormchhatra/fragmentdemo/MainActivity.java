@@ -26,5 +26,11 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, MultipleFragmentActivity.class));
             }
         });
+        findViewById(R.id.main_afi).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, FragementInteractionActivity.class));
+            }
+        });
     }
 }

@@ -30,4 +30,14 @@
         app:layout_constraintBottom_toTopOf="@+id/main_pla_btn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/main_afi"
+        android:layout_width="0dp"
+        android:layout_height="61dp"
+        android:layout_marginBottom="8dp"
+        android:text="Fragment Interaction"
+        app:layout_constraintBottom_toTopOf="@+id/main_multiple_fragment"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 </android.support.constraint.ConstraintLayout>

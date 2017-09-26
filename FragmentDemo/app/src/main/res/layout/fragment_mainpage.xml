@@ -24,7 +24,7 @@
 
         <android.support.constraint.ConstraintLayout
             android:id="@+id/constraintLayout"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="50dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -32,12 +32,13 @@
             app:layout_constraintRight_toRightOf="parent">
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:layout_marginBottom="0dp"
+                android:layout_marginEnd="0dp"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
                 app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
@@ -45,32 +46,21 @@
                     android:id="@+id/frag_main_prev"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:text="@string/previous" />
 
                 <Button
                     android:id="@+id/frag_main_next"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:text="@string/next" />
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:layout_marginBottom="0dp"
-                android:layout_marginEnd="0dp"
-                android:layout_marginTop="0dp"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
 
                 <EditText
                     android:id="@+id/frag_main_go_edit"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:hint="@string/page_number"
                     android:inputType="number" />
 
@@ -78,8 +68,26 @@
                     android:id="@+id/frag_main_go"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/go" />
+                    android:layout_weight="0.5"
+                    android:text="@string/go"
+                    android:textAlignment="center" />
             </LinearLayout>
+
+
+            <!--<LinearLayout-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="0dp"-->
+            <!--android:layout_marginBottom="0dp"-->
+            <!--android:layout_marginEnd="0dp"-->
+            <!--android:layout_marginTop="0dp"-->
+            <!--android:gravity="center_vertical"-->
+            <!--android:orientation="horizontal"-->
+            <!--app:layout_constraintBottom_toBottomOf="parent"-->
+            <!--app:layout_constraintEnd_toEndOf="parent"-->
+            <!--app:layout_constraintTop_toTopOf="parent">-->
+
+
+            <!--</LinearLayout>-->
         </android.support.constraint.ConstraintLayout>
 
     </android.support.constraint.ConstraintLayout>
