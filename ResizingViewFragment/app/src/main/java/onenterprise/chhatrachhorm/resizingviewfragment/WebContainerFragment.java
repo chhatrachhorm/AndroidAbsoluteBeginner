@@ -1,6 +1,7 @@
 package onenterprise.chhatrachhorm.resizingviewfragment;
 
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -22,13 +23,14 @@ public class WebContainerFragment extends Fragment {
     }
 
 
+    @SuppressLint("SetJavaScriptEnabled")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View mView = inflater.inflate(R.layout.fragment_web_container, container, false);
         mWebView = mView.findViewById(R.id.main_web_frag);
-        mWebView.getSettings().setJavaScriptCanOpenWindowsAutomatically(true);
+        mWebView.getSettings().setJavaScriptEnabled(true);
         mWebView.loadUrl("https://github.com/chhatrachhorm/");
         mWebView.setWebViewClient(new InternalWebView());
         return mView;

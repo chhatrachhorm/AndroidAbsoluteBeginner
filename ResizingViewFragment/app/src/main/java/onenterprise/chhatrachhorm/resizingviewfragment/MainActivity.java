@@ -21,9 +21,11 @@ public class MainActivity extends AppCompatActivity implements ContainerResizerF
         FragmentManager manager = getSupportFragmentManager();
         webContainerFragment = (WebContainerFragment) manager.findFragmentById(R.id.main_web_container_fragment);
         DisplayMetrics displayMetrics = new DisplayMetrics();
+
         webContainerFragment.getActivity().getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
         Width = displayMetrics.widthPixels;
         Height = displayMetrics.heightPixels;
+
         containerResizerFragment = (ContainerResizerFragment) manager.findFragmentById(R.id.main_resizer_fragment);
         containerResizerFragment.setMaxValues(Width, Height);
 
