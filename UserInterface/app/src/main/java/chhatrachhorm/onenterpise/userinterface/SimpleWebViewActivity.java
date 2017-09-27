@@ -16,6 +16,7 @@ public class SimpleWebViewActivity extends AppCompatActivity {
         WebView mWebView = findViewById(R.id.swva);
         WebSettings webSettings = mWebView.getSettings();
         webSettings.setJavaScriptEnabled(true);
+        mWebView.setWebViewClient(new InternalWebView());
         mWebView.loadUrl("http://www.chhorm-chhatra.ml/");
     }
     // Loading internal web browser
