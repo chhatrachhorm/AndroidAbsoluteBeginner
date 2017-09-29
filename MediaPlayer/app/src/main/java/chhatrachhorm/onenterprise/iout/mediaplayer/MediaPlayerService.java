@@ -25,7 +25,11 @@ public class MediaPlayerService extends Service implements
     private final IBinder iBinder = new LocalBinder();
     private MediaPlayer mediaPlayer;
     private String mediaData;
-    private int resumePosition;
+    private static int resumePosition;
+
+    public boolean getMediaPlayerState(){
+        return (mediaPlayer != null) && mediaPlayer.isPlaying();
+    }
 
     private void initMediaPlayer(){
         mediaPlayer = new MediaPlayer();
@@ -99,7 +103,6 @@ public class MediaPlayerService extends Service implements
         if(mediaPlayer.isPlaying()){
            stopMedia();
         }
-        mediaPlayer.release();
         mediaPlayer.reset();
         try {
             mediaPlayer.setDataSource(data);

@@ -20,7 +20,7 @@ public class SongListAdapter extends RecyclerView.Adapter<SongListAdapter.ViewHo
     List<SongModel> mSongList;
     OnEachSongClick eachSongClick;
 
-    public SongListAdapter(List<SongModel> songLists, OnEachSongClick eachSongClick){
+    SongListAdapter(List<SongModel> songLists, OnEachSongClick eachSongClick){
         this.mSongList = songLists;
         this.eachSongClick = eachSongClick;
     }

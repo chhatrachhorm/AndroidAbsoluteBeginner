@@ -6,5 +6,4 @@ package chhatrachhorm.onenterprise.iout.mediaplayer;
 
 public interface SongListListener {
     void onSongItemClick(SongModel song);
-    void onSongItemLongClick();
 }

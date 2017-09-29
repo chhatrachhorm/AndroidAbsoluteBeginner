@@ -9,4 +9,6 @@ public interface PlayerListener {
     void onStopBtnClick();
     void onPauseBtnClick();
     void onSongListBtnClick();
+    void onNextBtnClick();
+    void onPrevBtnClick();
 }

@@ -26,7 +26,7 @@ import java.util.List;
 public class SongsFragment extends Fragment implements OnEachSongClick{
 
 
-    private int currentMusic = 0;
+    private static int currentMusic = 0;
     private RecyclerView mRecyclerView;
     private RecyclerView.LayoutManager mLayoutManager;
     private RecyclerView.Adapter mAdapter;
@@ -46,11 +46,18 @@ public class SongsFragment extends Fragment implements OnEachSongClick{
     public SongModel getCurrentSong(){
         return mSongList.get(currentMusic);
     }
-
+    public int getCurrentMusicNumber(){return currentMusic;}
+    public int getTotalMusic(){return mSongList.size();}
+    public SongModel getSongById(int i){return mSongList.get(i);}
+    public void updateCurrentSong(int newSong){currentMusic = newSong;}
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         View mView = inflater.inflate(R.layout.fragment_songs, container, false);
+
+        songListListener = (SongListListener) getActivity();
+
         mRecyclerView = mView.findViewById(R.id.frag_song_list);
         mFrame = mView.findViewById(R.id.frag_song_list_layout);
         displaySongList(false);
@@ -71,14 +78,11 @@ public class SongsFragment extends Fragment implements OnEachSongClick{
         mAdapter = new SongListAdapter(mSongList, this);
         mRecyclerView.setAdapter(mAdapter);
 
-
-
         return mView;
     }
-
     @Override
     public void onASongClick(View view, int position) {
+        currentMusic = position;
         songListListener.onSongItemClick(mSongList.get(position));
-        Toast.makeText(getActivity().getApplicationContext(), mSongList.get(position).getSongTitle(), Toast.LENGTH_LONG).show();
     }
 }
