@@ -46,6 +46,12 @@ public class MainActivity extends AppCompatActivity
     }
 
     @Override
+    protected void onStop() {
+        super.onStop();
+        if(serviceBound) unbindService(serviceConnection);
+    }
+
+    @Override
     public void onPlayBtnClick() {
         if(!serviceBound){
             startPlayingSong(songsFragment.getCurrentSong().getSongData());
