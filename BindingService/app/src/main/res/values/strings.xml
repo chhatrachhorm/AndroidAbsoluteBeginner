@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">BindingService</string>
+    <string name="bind_service">Bind Service</string>
+    <string name="unbind_service">Unbind Service</string>
+    <string name="first_number">First Number</string>
+    <string name="second_number">Second Number</string>
+    <string name="add">Add</string>
+</resources>
