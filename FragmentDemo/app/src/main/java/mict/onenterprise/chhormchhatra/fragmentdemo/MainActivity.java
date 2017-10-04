@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.main_afi).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, FragementInteractionActivity.class));
+                startActivity(new Intent(MainActivity.this, FragmentInteractionActivity.class));
             }
         });
     }

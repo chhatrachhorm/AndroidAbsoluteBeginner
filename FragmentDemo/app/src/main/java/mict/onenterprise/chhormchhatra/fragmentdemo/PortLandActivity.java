@@ -1,10 +1,14 @@
 package mict.onenterprise.chhormchhatra.fragmentdemo;
 
-import android.app.FragmentManager;
+
+import android.app.AlertDialog;
 import android.app.FragmentTransaction;
+import android.content.DialogInterface;
 import android.content.res.Configuration;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+
 /*
 * Associated Fragments :
 *   PortraitFragment
@@ -21,8 +25,8 @@ public class PortLandActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pot_land);
 
-        FragmentManager mFragmentManger = getFragmentManager();
-        FragmentTransaction mTransaction = mFragmentManger.beginTransaction();
+//        FragmentManager mFragmentManger = getFragmentManager();
+        FragmentTransaction mTransaction = getFragmentManager().beginTransaction();
         Configuration mConfig = getResources().getConfiguration();
 
         if(mConfig.orientation == Configuration.ORIENTATION_PORTRAIT){

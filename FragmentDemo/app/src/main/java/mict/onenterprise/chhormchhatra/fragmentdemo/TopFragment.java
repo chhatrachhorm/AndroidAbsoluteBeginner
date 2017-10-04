@@ -54,5 +54,6 @@ public class TopFragment extends Fragment {
             }
         });
         return mView;
+        
     }
 }
