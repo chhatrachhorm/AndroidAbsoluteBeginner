@@ -1,7 +1,9 @@
 package iout.chhatrachhorm.simpleauth;
 
+import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.support.constraint.ConstraintLayout;
 import android.support.design.widget.FloatingActionButton;
@@ -24,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     private ConstraintLayout mSignIn, mSignUp;
 
     private static boolean isSignUpForm = false;
+    SharedPreferences sharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,8 +74,22 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        sharedPreferences = this.getSharedPreferences(getString(R.string.parentKey), Activity.MODE_PRIVATE);
+        String token = sharedPreferences.getString(getString(R.string.authTokenKey), "no_token");
+        if(!token.equals("no_token")){
+            startActivity(new Intent(this, HomeActivity.class));
+            finish();
+        }
+
     }
 
+    private void setToken(String name, String email, String phone){
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString(getString(R.string.auth_name), name);
+        editor.putString(getString(R.string.auth_email), email);
+        editor.putString(getString(R.string.auth_phone), phone);
+        editor.putString(getString(R.string.authTokenKey), name + email).apply();
+    }
     private void signingIn(){
         String email = mSignInEmail.getEditableText().toString();
         String password = mSignInPass.getEditableText().toString();
@@ -82,9 +99,7 @@ public class MainActivity extends AppCompatActivity {
             if(res.getCount()!=0){
                 while (res.moveToNext()){
                     Intent startHome = new Intent(MainActivity.this, HomeActivity.class);
-                    startHome.putExtra("name", res.getString(0));
-                    startHome.putExtra("email", res.getString(1));
-                    startHome.putExtra("phone_num", res.getString(2));
+                    setToken(res.getString(0), res.getString(1), res.getString(2));
                     startActivity(startHome);
                     finish();
                 }
@@ -125,9 +140,7 @@ public class MainActivity extends AppCompatActivity {
                 if(res.getCount()!=0){
                     while (res.moveToNext()){
                         Intent startHome = new Intent(MainActivity.this, HomeActivity.class);
-                        startHome.putExtra("name", res.getString(0));
-                        startHome.putExtra("email", res.getString(1));
-                        startHome.putExtra("phone_num", res.getString(2));
+                        setToken(res.getString(0), res.getString(1), res.getString(2));
                         startActivity(startHome);
                         finish();
                     }

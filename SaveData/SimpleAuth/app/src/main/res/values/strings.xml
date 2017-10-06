@@ -8,4 +8,10 @@
     <string name="name">Name</string>
     <string name="phone_number">Phone Number</string>
     <string name="confirm_password">Confirm Password</string>
+    <string name="parentKey">iout.chhatrachhorm.simpleauth.parent</string>
+    <string name="authTokenKey">iout.chhatrachhorm.simpleauth.parent.authtoken</string>
+    <string name="auth_name">iout.chhatrachhorm.simpleauth.parent.name</string>
+    <string name="auth_email">iout.chhatrachhorm.simpleauth.parent.email</string>
+    <string name="auth_phone">iout.chhatrachhorm.simpleauth.parent.phone</string>
+    <string name="welcome">Welcome %1$s</string>
 </resources>
