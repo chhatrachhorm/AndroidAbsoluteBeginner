@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">SimpleAuth</string>
+    <string name="password">password</string>
+    <string name="email">email</string>
+    <string name="sign_in">Sign in</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="register">Register</string>
+    <string name="name">Name</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="confirm_password">Confirm Password</string>
 </resources>
