@@ -83,6 +83,15 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onBackPressed() {
+        if(isSignUpForm){
+            changeForm();
+        }else{
+            super.onBackPressed();
+        }
+    }
+
     private void setToken(String name, String email, String phone){
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString(getString(R.string.auth_name), name);
@@ -104,7 +113,7 @@ public class MainActivity extends AppCompatActivity {
                     finish();
                 }
             }else{
-                setAlertError();
+                setAlertError("No Credential Found");
             }
         }
         setSignInErrorForm(validation[1]);
@@ -115,10 +124,10 @@ public class MainActivity extends AppCompatActivity {
     private void setSignUpErrorForm(String error){
         mFormSignUp.setText(error);
     }
-    private void setAlertError(){
+    private void setAlertError(String message){
         new AlertDialog.Builder(MainActivity.this)
                 .setTitle("Oops")
-                .setMessage("No Credential Found")
+                .setMessage(message)
                 .setPositiveButton("Okay", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
@@ -145,7 +154,7 @@ public class MainActivity extends AppCompatActivity {
                         finish();
                     }
                 }
-            }
+            }else setAlertError("The email is already exist");
         }
         setSignUpErrorForm(validation[1]);
 

@@ -6,6 +6,8 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
+import android.widget.Toast;
 
 
 /**
@@ -48,13 +50,31 @@ public class SQLiteHelper extends SQLiteOpenHelper {
     }
     boolean insertCredential(String name, String email, String phone, String password){
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
-        ContentValues contentValues = new ContentValues();
-        contentValues.put(COL_2, name);
-        contentValues.put(COL_3, email);
-        contentValues.put(COL_4, phone);
-        contentValues.put(COL_5, password);
-        Long newROW = sqLiteDatabase.insert(TB_NAME, null, contentValues);
-        return newROW != -1;
+        Log.d("VALUE", String.valueOf(checkEmail(email).getCount()));
+        if(checkEmail(email).getCount() == 0){
+            ContentValues contentValues = new ContentValues();
+            contentValues.put(COL_2, name);
+            contentValues.put(COL_3, email);
+            contentValues.put(COL_4, phone);
+            contentValues.put(COL_5, password);
+            Long newROW = sqLiteDatabase.insert(TB_NAME, null, contentValues);
+            return newROW != -1;
+        }else return false;
+    }
+    private Cursor checkEmail(String email){
+        SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
+        String[] projection = {COL_2, COL_3, COL_4};
+        String selection = COL_3 + " = ? ";
+        String[] selectArg = {email};
+        return sqLiteDatabase.query(
+                TB_NAME,
+                projection,
+                selection,
+                selectArg,
+                null,
+                null,
+                COL_2 + " DESC"
+        );
     }
     Cursor getCredential(String email, String password){
         SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
