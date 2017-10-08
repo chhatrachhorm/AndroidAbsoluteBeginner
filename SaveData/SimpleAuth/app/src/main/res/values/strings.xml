@@ -14,4 +14,6 @@
     <string name="auth_email">iout.chhatrachhorm.simpleauth.parent.email</string>
     <string name="auth_phone">iout.chhatrachhorm.simpleauth.parent.phone</string>
     <string name="welcome">Welcome %1$s</string>
+    <string name="logo">LOGO</string>
+    <string name="log_out">Log Out</string>
 </resources>

@@ -32,7 +32,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@android:drawable/btn_star_big_on" />
+            app:srcCompat="@android:drawable/btn_star_big_on"
+            android:contentDescription="@string/logo" />
 
         <android.support.design.widget.TextInputLayout
             android:id="@+id/textInputLayout"
@@ -106,7 +107,7 @@
             android:layout_marginEnd="30dp"
             android:layout_marginStart="30dp"
             android:layout_marginTop="8dp"
-            android:text="Error"
+            android:text=""
             android:textAlignment="center"
             android:textColor="@android:color/holo_red_dark"
             app:layout_constraintEnd_toEndOf="parent"
@@ -257,7 +258,8 @@
             android:clickable="true"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@android:drawable/ic_menu_close_clear_cancel" />
+            app:srcCompat="@android:drawable/ic_menu_close_clear_cancel"
+            android:focusable="true" />
 
         <TextView
             android:id="@+id/main_sign_up_form_error"
@@ -266,7 +268,7 @@
             android:layout_marginEnd="30dp"
             android:layout_marginStart="30dp"
             android:layout_marginTop="8dp"
-            android:text="Error"
+            android:text=""
             android:textAlignment="center"
             android:textColor="@android:color/holo_red_dark"
             android:textSize="12sp"

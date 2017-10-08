@@ -38,7 +38,9 @@ class FormValidation {
             res[1] = "Please Input all the Fields";
         }else if(name.length() < 2 || name.length() > 20){
             res[1] = "Username's Length is only between 2 and 20 Characters";
-        }else if(SYMBOL.matcher(name).find()){
+        }else if(name.contains(" ")){
+            res[1] = "Username must not contain any white space";
+        } else if(SYMBOL.matcher(name).find()){
             res[1] = "Username must not contain any special character";
         } else if(email.length() > 40) {
             res[1] = "The length of the email must not exceed 40 characters";
