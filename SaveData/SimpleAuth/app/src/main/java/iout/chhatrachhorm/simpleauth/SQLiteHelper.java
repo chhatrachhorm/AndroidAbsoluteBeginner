@@ -6,7 +6,6 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.util.Log;
 
 
 
@@ -50,7 +49,7 @@ public class SQLiteHelper extends SQLiteOpenHelper {
     }
     boolean insertCredential(String name, String email, String phone, String password){
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
-        Log.d("VALUE", String.valueOf(checkEmail(email).getCount()));
+//        Log.d("VALUE", String.valueOf(checkEmail(email).getCount()));
         if(checkEmail(email).getCount() == 0){
             ContentValues contentValues = new ContentValues();
             contentValues.put(COL_2, name);

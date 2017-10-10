@@ -16,4 +16,5 @@
     <string name="welcome">Welcome %1$s</string>
     <string name="logo">LOGO</string>
     <string name="log_out">Log Out</string>
+    <string name="sign_out">Sign Out</string>
 </resources>

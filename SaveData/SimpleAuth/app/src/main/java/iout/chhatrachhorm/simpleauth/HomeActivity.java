@@ -21,9 +21,15 @@ public class HomeActivity extends AppCompatActivity {
         sharedPreferences = this.getSharedPreferences(getString(R.string.parentKey), Activity.MODE_PRIVATE);
         checkToken();
         String name = sharedPreferences.getString(getString(R.string.auth_name), "No Name");
-//        String email = sharedPreferences.getString(getString(R.string.auth_email), "No Email");
         TextView welcome = findViewById(R.id.home_name);
         welcome.setText(getString(R.string.welcome, name));
+        findViewById(R.id.home_sign_out_btn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                clearToken();
+            }
+        });
+
     }
     private void checkToken(){
         String token = sharedPreferences.getString(getString(R.string.authTokenKey), "no_token");
@@ -44,13 +50,16 @@ public class HomeActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         super.onOptionsItemSelected(item);
         if(item.getItemId() == R.id.auth_logout){
-            SharedPreferences.Editor editor = sharedPreferences.edit();
-            editor.putString(getString(R.string.auth_name), "");
-            editor.putString(getString(R.string.auth_email), "");
-            editor.putString(getString(R.string.auth_phone), "");
-            editor.putString(getString(R.string.authTokenKey), "no_token").apply();
-            checkToken();
+            clearToken();
         }
         return true;
+    }
+    private void clearToken(){
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString(getString(R.string.auth_name), "");
+        editor.putString(getString(R.string.auth_email), "");
+        editor.putString(getString(R.string.auth_phone), "");
+        editor.putString(getString(R.string.authTokenKey), "no_token").apply();
+        checkToken();
     }
 }
