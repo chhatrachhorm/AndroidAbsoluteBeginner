@@ -1,4 +1,4 @@
-# KIT - Mobile App Development Model Examination
+#  Mobile App Development Model Examination
 ## Part A
 1. Activity is an entry point for interacting with a user.
 2. Service is the app component that can perform long-running operation in the background
